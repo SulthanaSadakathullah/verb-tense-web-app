@@ -35,3 +35,51 @@ A simple and interactive web application that extracts verbs from a paragraph an
    git clone https://github.com/SulthanaSadakathullah/verb-tense-web-app.git
    cd verb-tense-web-app
 
+   Install dependencies:
+
+bash :
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+
+Run the app:
+python app.py
+
+Visit:
+Open your browser and go to: http://localhost:5000
+
+🗣️ How to Use
+
+* Type or speak a paragraph in the text area.
+*Click Convert.
+*See a table with the extracted verbs and their tense forms.
+
+Project Structure :
+
+verb-tense-web-app/
+│
+├── app.py                  # Flask app logic
+├── requirements.txt        # Python dependencies
+├── render.yaml             # Render deployment config
+│
+├── templates/
+│   └── index.html          # Main HTML template
+│
+├── static/
+│   └── style.css 
+
+
+🙌 Acknowledgments:
+   
+    spaCy
+    Pattern
+    Flask
+    Web Speech API
+
+
+✨ Author
+👤 Sulthana Sadakathullah
+
+
+
+
+
