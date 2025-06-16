@@ -24,10 +24,9 @@ A simple and interactive web application that extracts verbs from a paragraph an
 
 ---
 📸 Screenshots
+![image](https://github.com/user-attachments/assets/8e6aa07f-68e5-4c1d-a9b2-07bd16ec86f7)
 
-![image](https://github.com/user-attachments/assets/c52200c7-4eec-4d4d-b5cb-5c07cbe02de8)
-![image](https://github.com/user-attachments/assets/9932ddaa-d90a-4317-b572-e2b7307a9550)
-
+![image](https://github.com/user-attachments/assets/49126fc7-ed80-4e41-9904-59681a1d45f8)
 
 📦 Installation
 
