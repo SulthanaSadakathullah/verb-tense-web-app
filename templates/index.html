@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verb Tense Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Verb Tense Converter</h1>
+        <form method="POST">
+            <textarea name="paragraph" id="paragraph" placeholder="Enter a paragraph..." required>{{ paragraph }}</textarea>
+            <button type="button" onclick="startDictation()">🎤 Speak</button>
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Verb</th>
+                    <th>Present</th>
+                    <th>Past</th>
+                    <th>Past Participle</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                <tr>
+                    <td>{{ row.verb }}</td>
+                    <td>{{ row.present }}</td>
+                    <td>{{ row.past }}</td>
+                    <td>{{ row.past_participle }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+    <script>
+        function startDictation() {
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+                var recognition = new webkitSpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = "en-US";
+                recognition.start();
+
+                recognition.onresult = function(e) {
+                    document.getElementById('paragraph').value = e.results[0][0].transcript;
+                    recognition.stop();
+                };
+
+                recognition.onerror = function(e) {
+                    recognition.stop();
+                }
+            } else {
+                alert("Speech recognition not supported on this browser.");
+            }
+        }
+    </script>
+</body>
+</html>
